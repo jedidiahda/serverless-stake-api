@@ -34,8 +34,10 @@ provider:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
-      Resource: "arn:aws:dynamodb:ap-northeast-2:*:*"
-
+      Resource: 
+        - "arn:aws:dynamodb:ap-northeast-2:*:*"
+      # API Gateway Errors
+        - ${file(resources/api-gateway-errors.yml)}
 functions:
   # Defines an HTTP API endpoint that calls the main function in create.js
   # - path: url path is /notes
