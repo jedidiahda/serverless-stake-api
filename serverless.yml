@@ -34,9 +34,9 @@ provider:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
-      Resource: 
+      Resource:
         - "arn:aws:dynamodb:ap-northeast-2:*:*"
-      # API Gateway Errors
+        # API Gateway Errors
         - ${file(resources/api-gateway-errors.yml)}
 functions:
   # Defines an HTTP API endpoint that calls the main function in create.js
@@ -96,16 +96,5 @@ functions:
       - http:
           path: notes/{id}
           method: delete
-          cors: true
-          authorizer: aws_iam
-  billing:
-    # Defines an HTTP API endpoint that calls the main function in billing.js
-    # - path: url path is /billing
-    # - method: POST request
-    handler: billing.main
-    events:
-      - http:
-          path: billing
-          method: post
           cors: true
           authorizer: aws_iam
