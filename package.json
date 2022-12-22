@@ -17,7 +17,7 @@
     "jest": "^25.1.0",
     "serverless": "^1.64.1",
     "serverless-dotenv-plugin": "^2.3.2",
-    "serverless-offline": "^6.0.0-alpha.67",
+    "serverless-offline": "^12.0.3",
     "uuid": "^7.0.1"
   },
   "dependencies": {
